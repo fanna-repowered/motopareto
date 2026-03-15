@@ -1,0 +1,280 @@
+#rooms-detail {
+    background: var(--black);
+}
+
+.rooms-detail-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.room-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    align-items: stretch;
+}
+
+.room-block:nth-child(even) {
+    direction: rtl;
+}
+
+.room-block:nth-child(even) > * {
+    direction: ltr;
+}
+
+/* ─── Room Gallery ─── */
+.room-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.gallery-main {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 6/5;
+    background: var(--black);
+    cursor: pointer;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    filter: brightness(0.88) saturate(0.9);
+}
+
+.gallery-main img.active {
+    opacity: 1;
+}
+
+.gallery-main img:hover {
+    filter: brightness(1) saturate(1);
+}
+
+
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(14, 14, 14, 0.65);
+    border: 1px solid rgba(86, 99, 83, 0.4);
+    color: var(--cream);
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+}
+
+.gallery-arrow:hover {
+    background: var(--primary);
+}
+
+.gallery-arrow.prev {
+    left: 8px;
+}
+
+.gallery-arrow.next {
+    right: 8px;
+}
+
+.gallery-arrow svg {
+    width: 14px;
+}
+
+
+.gallery-counter {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(0, 0, 0, 0.45);
+    padding: 2px 7px;
+    pointer-events: none;
+}
+
+.gallery-filmstrip {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-filmstrip-inner {
+    display: flex;
+    gap: 4px;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.gallery-thumb {
+    flex: 0 0 calc(25% - 3px);
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.55;
+    transition: opacity 0.2s;
+}
+
+.gallery-thumb.active {
+    opacity: 1;
+    outline: 2px solid var(--primary);
+    outline-offset: -2px;
+}
+
+.gallery-thumb:hover {
+    opacity: 0.9;
+}
+
+.gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.filmstrip-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 28px;
+    background: linear-gradient(to right, rgba(14, 14, 14, 0.9), transparent);
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transition: opacity 0.2s;
+}
+
+.filmstrip-btn.right {
+    right: 0;
+    left: auto;
+    background: linear-gradient(to left, rgba(14, 14, 14, 0.9), transparent);
+}
+
+.filmstrip-btn.visible {
+    display: flex;
+}
+
+.filmstrip-btn svg {
+    width: 12px;
+    color: var(--cream);
+}
+
+.room-info {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.room-name {
+    font-family: var(--font-heading), sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+}
+
+.room-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-pill {
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    background: rgba(86, 99, 83, 0.12);
+    border: 1px solid rgba(86, 99, 83, 0.3);
+    color: var(--stone);
+}
+
+.room-desc {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--cream);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+.price-block {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.price-amount {
+    font-family: var(--font-heading), sans-serif;
+    font-size: 3rem;
+    color: var(--white);
+    line-height: 1;
+}
+
+.price-unit {
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--stone);
+}
+
+.price-note {
+    font-family: var(--font-body), sans-serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--stone);
+    margin-top: 0.3rem;
+}
+
+.camper-block {
+    background: var(--charcoal);
+    padding: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.camper-icon {
+    font-size: 4rem;
+}
+
+.camper-info {
+    flex: 1;
+}
+
+.camper-title {
+    font-family: var(--font-heading), sans-serif;
+    font-size: 2.2rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.camper-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--cream);
+    opacity: 0.8;
+}

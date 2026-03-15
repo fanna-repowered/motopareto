@@ -1,0 +1,79 @@
+
+@import url("main.css");
+
+/* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(86,99,83,0.2);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--font-heading), sans-serif;
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .footer-address {
+      font-family: var(--font-heading), sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--stone);
+      margin-top: 1.5rem;
+      opacity: 0.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav { padding: 0.6rem 1rem; }
+      .nav-links { display: none; }
+      .nav-logo img { height: 34px; }
+      .hamburger { display: flex; }
+
+      section { padding: 3.5rem 1.2rem; }
+
+      .home-title { font-size: clamp(3.5rem, 18vw, 6rem); }
+      .home-subtitle { font-size: 0.95rem; letter-spacing: 0.12em; }
+      .home-desc { font-size: 0.92rem; }
+      .cta-btn { padding: 0.8rem 2rem; font-size: 0.78rem; }
+
+      .rooms-grid { grid-template-columns: 1fr; gap: 2px; }
+      .room-card { aspect-ratio: 4/3; }
+
+      .leopia-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .host-names { font-size: 2.4rem; }
+
+      .room-block { grid-template-columns: 1fr; gap: 2rem; }
+      .room-block:nth-child(even) { direction: ltr; }
+      .gallery-thumb { flex: 0 0 calc(33.33% - 3px); }
+
+      .camper-block { gap: 1.5rem; padding: 1.8rem 1.2rem; flex-direction: column; }
+
+      .social-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .map-embed { min-height: 260px; }
+
+      .surr-grid { grid-template-columns: 1fr; }
+
+      .section-title { font-size: clamp(1.9rem, 8vw, 3rem); }
+      .price-amount { font-size: 2.4rem; }
+    }
+
+    @media (max-width: 380px) {
+      .home-title { font-size: 3.2rem; }
+    }
+
+    /* i18n – hide all except active */
+    [data-lang] { display: none; }
+    [data-lang].active { display: inline; }
+    [data-lang-block] { display: none; }
+    [data-lang-block].active { display: block; }
+    [data-lang-flex] { display: none; }
+    [data-lang-flex].active { display: flex; }

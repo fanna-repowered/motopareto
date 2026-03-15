@@ -1,0 +1,69 @@
+#rooms-overview {
+    background: var(--charcoal);
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+}
+
+.room-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+.room-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.6) saturate(0.8);
+}
+
+.room-card:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.75) saturate(1);
+}
+
+.room-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1.5rem 1.5rem;
+    background: linear-gradient(transparent, rgba(10, 10, 10, 0.9));
+}
+
+.room-card-band {
+    display: inline-block;
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 0.4rem;
+}
+
+.room-card-name {
+    font-family: var(--font-heading), sans-serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.room-card-info {
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--stone);
+}

@@ -1,0 +1,35 @@
+:root {
+    --black: #0e0e0e;
+    --charcoal: #1a1a1a;
+    --dark: #242424;
+    --primary: #566353;
+    --secondary: #7a9175;
+    --cream: #f2ead8;
+    --stone: #9e9386;
+    --white: #f8f5ef;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: lora;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body), sans-serif;
+    background: var(--black);
+    color: var(--cream);
+    overflow-x: hidden;
+}
+
+.error-loading {
+    color: white;
+    padding: 2rem;
+}

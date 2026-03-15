@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Moto Pareto – B&B for Riders</title>
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap"
+          rel="stylesheet"/>
+
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/nav.css"/>
+    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/section.css"/>
+    <link rel="stylesheet" href="css/rooms-overview.css"/>
+    <link rel="stylesheet" href="css/rooms-detail.css"/>
+    <link rel="stylesheet" href="css/leopia.css"/>
+    <link rel="stylesheet" href="css/surroundings.css"/>
+    <link rel="stylesheet" href="css/social.css"/>
+    <link rel="stylesheet" href="css/faq.css"/>
+    <link rel="stylesheet" href="css/contact.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+    const sections = [
+        'sections/nav.html',
+        'sections/home.html',
+        'sections/rooms-overview.html',
+        'sections/rooms-detail.html',
+        'sections/leopia.html',
+        'sections/surroundings.html',
+        'sections/social.html',
+        'sections/faq.html',
+        'sections/contact.html',
+        'sections/footer.html'
+    ];
+
+    let app = document.getElementById('app');
+
+    Promise.all(
+        sections.map(function (url) {
+            return fetch(url).then(function (response) {
+                if (!response.ok) throw new Error('Failed to load ' + url);
+                return response.text();
+            });
+        })
+    ).then(function (htmlParts) {
+        app.innerHTML = htmlParts.join('\n');
+        bootScripts();
+    }).catch(function (err) {
+        console.error('Section load error:', err);
+        app.innerHTML = '<p class="error-loading">Error loading page sections</p>';
+    });
+
+    function bootScripts() {
+        const scripts = [
+            'js/email.js',
+            'js/lang.js',
+            'js/nav.js',
+            'js/faq.js',
+            'js/gallery.js'
+        ];
+        scripts.forEach(function (src) {
+            let s = document.createElement('script');
+            s.src = src;
+            document.body.appendChild(s);
+        });
+    }
+</script>
+
+</body>
+</html>

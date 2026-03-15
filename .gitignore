@@ -1,0 +1,10 @@
+# IDE
+.idea/
+
+# Linux
+*~
+
+# Editor temporary files
+*.swp
+*.swo
+.vscode/

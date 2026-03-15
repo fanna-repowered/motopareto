@@ -1,0 +1,42 @@
+<nav>
+    <a href="#home" class="nav-logo">
+        <img src="../images/moto-pareto-logo.svg" alt="Moto Pareto"/>
+    </a>
+    <ul class="nav-links" id="desktop-nav">
+        <li><a href="#rooms-overview" class="nav-txt" data-key="nav-rooms">Rooms</a></li>
+        <li><a href="#leopia" class="nav-txt" data-key="nav-hosts">Hosts</a></li>
+        <li><a href="#surroundings" class="nav-txt" data-key="nav-area">Area</a></li>
+        <li><a href="#social" class="nav-txt" data-key="nav-social">Social</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="nav-txt" data-key="nav-contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:0.8rem;">
+        <div class="lang-dropdown" id="langDropdown">
+            <button class="lang-dropdown-btn" id="langButton">
+                <span id="langCurrent">EN</span>
+                <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M1 1l4 4 4-4"/>
+                </svg>
+            </button>
+            <div class="lang-dropdown-menu" id="langMenu">
+                <button class="active" data-target="en">🇬🇧 English</button>
+                <button data-target="it">🇮🇹 Italiano</button>
+                <button data-target="nl">🇳🇱 Nederlands</button>
+                <button data-target="de">🇩🇪 Deutsch</button>
+                <button data-target="fy">🏴 Frysk</button>
+            </div>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <a href="#rooms-overview" class="nav-txt" data-key="nav-rooms">Rooms</a>
+    <a href="#leopia" class="nav-txt" data-key="nav-hosts">Hosts</a>
+    <a href="#surroundings" class="nav-txt" data-key="nav-area">Area</a>
+    <a href="#social" class="nav-txt" data-key="nav-social">Social</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-txt" data-key="nav-contact">Contact</a>
+</div>

@@ -53,6 +53,9 @@
         })
     ).then(function (htmlParts) {
         app.innerHTML = htmlParts.join('\n');
+        app.querySelectorAll('[src^="../"]').forEach(function (el) {
+            el.src = el.getAttribute('src').slice(3);
+        });
         bootScripts();
     }).catch(function (err) {
         console.error('Section load error:', err);

@@ -62,6 +62,12 @@
         app.innerHTML = '<p class="error-loading">Error loading page sections</p>';
     });
 
+    function parseTwemoji() {
+        if (typeof twemoji !== 'undefined') {
+            twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+        }
+    }
+
     function bootScripts() {
         const scripts = [
             'js/email.js',
@@ -70,6 +76,12 @@
             'js/faq.js',
             'js/gallery.js'
         ];
+        let twemojiScript = document.createElement('script');
+        twemojiScript.src = 'https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js';
+        twemojiScript.crossOrigin = 'anonymous';
+        twemojiScript.onload = parseTwemoji;
+        document.body.appendChild(twemojiScript);
+
         scripts.forEach(function (src) {
             let s = document.createElement('script');
             s.src = src;

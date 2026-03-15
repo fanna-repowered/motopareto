@@ -12,9 +12,9 @@
 }
 
 .leopia-photo {
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
 }
 
 .leopia-photo img {
@@ -22,7 +22,6 @@
     aspect-ratio: 4/5;
     object-fit: cover;
     filter: sepia(0.3);
-    flex-basis: calc(50% - 0.1rem);
 }
 
 .leopia-text {
@@ -67,12 +66,19 @@
 }
 
 .lang-tag {
+    display: flex;
+    flex-direction: column;
     font-family: var(--font-heading), sans-serif;
     font-size: 0.6rem;
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     padding: 0.2rem 0.6rem;
-    border: 1px solid rgba(86, 99, 83, 0.5);
     color: var(--primary);
+}
+
+.lang-tag img {
+    max-height: 2rem;
+    width: auto;
+    margin-right: 0.2rem;
 }

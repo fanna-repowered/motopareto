@@ -95,7 +95,6 @@ nav {
     right: 0;
     background: var(--charcoal);
     border: 1px solid rgba(86, 99, 83, 0.3);
-    min-width: 110px;
     display: none;
     flex-direction: column;
     z-index: 200;
@@ -115,16 +114,22 @@ nav {
     background: none;
     border: none;
     color: var(--stone);
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 0.25rem;
     cursor: pointer;
-    text-align: left;
     transition: all 0.15s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .lang-dropdown-menu button:hover,
 .lang-dropdown-menu button.active {
     background: rgba(86, 99, 83, 0.15);
     color: var(--primary);
+}
+
+.lang-dropdown-menu button img {
+    max-height: 2rem
 }
 
 /* ── Hamburger (mobile) ── */

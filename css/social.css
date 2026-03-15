@@ -40,10 +40,6 @@
     transition: all 0.4s;
 }
 
-.social-img:hover img {
-    filter: brightness(1) saturate(1.1);
-    transform: scale(1.04);
-}
 
 .social-links {
     display: flex;
